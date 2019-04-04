@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import api from '../api';
+import {Link} from 'react-router-dom';
 /* Demo */
 import event01 from '../assets/event01.jpg';
 import event02 from '../assets/event02.jpg';
 import event03 from '../assets/event03.jpg';
 import event05 from '../assets/event05.png';
 import test from '../assets/test.png';
-
-
 
 export default class Homepage extends Component {
 
@@ -31,7 +30,6 @@ export default class Homepage extends Component {
 
     render() {
       const { events } = this.state;
-      console.log("events1" + events);
 
         return (
           <div className="container-fluid">
@@ -65,34 +63,42 @@ export default class Homepage extends Component {
           {/* End Slider */
           /* Start show next events */}
           <div className="container">
-            <h1><i className="fas fa-calendar my-3 pr-3"></i> Next events</h1>
+            <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Next events</h1>
             <div className="row text-center">
-              <div class="card-deck">
+              <div className="card-deck">
               {events.map(events =>
-                  <div key={events.id} className="col mb-2">
+                  <div key={events.id} className="card">
                     <div className="card-content">
                       <div className="card-img">
                         <img src={events.event_image} alt=""/>
                         <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time} </h4></span>
                         <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
-                    </div>
-                    <div className="card-desc">
+                      </div>
+                      <div className="card-desc">
                         <h3>{events.event_title}</h3>
                         <p>{events.event_description}</p>
-                          <a href="#" className="btn-card">More info</a>
-                    </div>
+                        </div>
+                      </div>
+                        <Link to="/event">
+                          <button type="button" className="btn-card btn-primary btn-lg btn-block"> <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Show more cool events <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></button>
+                        </Link>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
             </div>
           </div>
-
-
           {/* End show next events */}
-
-
+          <div className="container my-4">
+            <Link to="/events">
+              <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
+            </Link>
+          </div>
+        <div className="container my-4">
+          <Link to="/addnewevent">
+            <button type="button" className="btn-card btn-light btn-lg btn-block">Add a new event</button>
+          </Link>
         </div>
+      </div>
 
 
         );
