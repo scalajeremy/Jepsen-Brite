@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('/register', 'Auth\RegisterController@register');
+Route::post('/register', 'Auth/RegisterController@register');
 Route::post('/login', 'AuthController@login');
 
 Route::get('/homepage', 'EventController@homepage')->name('events.homepage');

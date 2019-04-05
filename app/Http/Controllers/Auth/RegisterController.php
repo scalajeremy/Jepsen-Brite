@@ -48,7 +48,7 @@ class RegisterController extends Controller
     {
         $user = User::where('confirmation_token', $token)->first();
         if ($user) {
-            $user->update(['confirmation_token' => null, 'email_verified_at' => 'NOW' ]);
+            $user->update(['confirmation_token' => null, 'email_verified_at' => NOW() ]);
             return response()->json(
                 ['success' => 'successfull email confirmation']);
         }else {
@@ -60,7 +60,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
-
+        
         event(new Registered($user = $this->create($request->all())));
         $user->notify(new RegisteredUsers());
         return response()->json(
