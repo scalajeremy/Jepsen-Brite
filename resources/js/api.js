@@ -40,9 +40,8 @@ class API {
   }
 
   async fetchEventSolo(id) {
-    const response = await this.callAPI('GET', 'events/' + id);
-    const json = await response.json();
-    return({ eventSolo: json});
+    const json = await this.callAPI('GET', 'events/' + id);
+    return({ events: json});
   }
 
   async fetchPastEvents(page = 1) {
