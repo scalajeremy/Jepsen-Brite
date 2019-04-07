@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
-import Header from './components/layout/header';
+import Header from './header';
 import Routes from './routes';
-import Footer from './components/layout/footer';
-import api from  './api';
+import Footer from './footer';
+import api from  '../api';
 
 ReactDOM.render(
 
