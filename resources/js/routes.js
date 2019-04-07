@@ -22,14 +22,10 @@ const Routes = () => (
     <Route exact path="/addnewevent" component={AddNewEvent} />
     <Route exact path="/editanevent/:id" component={EditAnEvent} />
     <Route exact path="/deleteanevent/:id" component={DeleteAnEvent} />
-
     <Route exact path="/pastevents/page=:page" component={PastEvents} />
-
-
     <Route exact path="/register" component={Register} />
     <Route exact path="/login" component={Login} />
     <Route exact path="/logout" component={Logout} />
-
     <Route exact path="/team" component={Team} />
     <Route exact path="/contact" component={Contact} />
   </Switch>
