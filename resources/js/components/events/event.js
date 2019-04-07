@@ -75,6 +75,8 @@ export default class Eventsolo extends Component {
                 <div className="row attendee">
                   <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
                 </div>
+                <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+events.id}>Delete</a></div>
+                <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+events.id}>Edit</a></div>
               </div>
             </div>
 
