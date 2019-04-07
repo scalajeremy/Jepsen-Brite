@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import api from '../api';
 import {Link} from 'react-router-dom';
-import Card from './layout/card';
+import Card from './card';
 import '../../sass/cards.scss';
 /* Demo */
 import event02 from '../assets/event02.jpg';
@@ -78,7 +78,7 @@ export default class Homepage extends Component {
           </div>
           {/* End show next events */}
           <div className="container my-4">
-            <Link to="/events/page=1">
+            <Link to="/events">
               <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
             </Link>
           </div>

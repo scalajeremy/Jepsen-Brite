@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import api from '../../api';
+import api from '../api';
 /* Demo */
-import event05 from '../../assets/event05.png';
+import event05 from '../assets/event05.png';
 
 
 export default class AddNewEvent extends Component {
@@ -34,21 +34,19 @@ export default class AddNewEvent extends Component {
     //return this.setState({event_title: event.target.value, event_time: event.target.value, event_description: event.target.value, event_city: event.target.value, event_location: event.target.value, event_image: event.target.value});
   }
 
-  async handleSubmit(event) {
+  handleSubmit(event) {
+    alert('An event was created: ' + this.state.event_title);
     event.preventDefault();
     this.state.event_time = this.state.date + ' '+ this.state.time;
     delete this.state.date;
     delete this.state.time;
     const data = JSON.stringify(this.state);
-    const response = await (api.AddEvent(data));
-    alert(response.message + ' : ' + this.state.event_title);
-     this.props.history.push("/event/"+ response.id);
-
+    api.AddEvent(data);
+    console.log(data);
   }
 
   render() {
     return (
-
       <div className="container">
         <h1>Add a new event</h1>
         <form onSubmit={this.handleSubmit}>
@@ -73,7 +71,7 @@ export default class AddNewEvent extends Component {
             <input type="text" className="form-control" name="event_city" placeholder="City name" value={this.state.event_city} onChange={this.handleChange} />
           </div>
           <div className="form-group">
-            <label htmlFor="adress">Adress</label>
+            <label htmlFor="city">City</label>
             <input type="text" className="form-control" name="event_location" placeholder="Exact adress" value={this.state.event_location} onChange={this.handleChange} />
           </div>
           <div className="form-group">

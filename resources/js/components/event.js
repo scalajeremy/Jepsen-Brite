@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import api from '../../api';
+import api from '../api';
 import {Link} from 'react-router-dom';
-import Card from '../layout/card';
-import '../../../sass/event.scss';
+import Card from './card';
+import '../../sass/event.scss';
 /* Demo purpose only */
-import attendee01 from '../../assets/avatar07.png';
-import attendee02 from '../../assets/avatar08.png';
-import attendee03 from '../../assets/avatar09.png';
-import attendee04 from '../../assets/avatar10.png';
-import attendee05 from '../../assets/avatar11.png';
-import attendee06 from '../../assets/avatar12.png';
-import attendee07 from '../../assets/avatar13.png';
-import map from '../../assets/map.png';
+import attendee01 from '../assets/avatar07.png';
+import attendee02 from '../assets/avatar08.png';
+import attendee03 from '../assets/avatar09.png';
+import attendee04 from '../assets/avatar10.png';
+import attendee05 from '../assets/avatar11.png';
+import attendee06 from '../assets/avatar12.png';
+import attendee07 from '../assets/avatar13.png';
+import map from '../assets/map.png';
 
 
 export default class Eventsolo extends Component {
@@ -75,8 +75,6 @@ export default class Eventsolo extends Component {
                 <div className="row attendee">
                   <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
                 </div>
-                <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+events.id}>Delete</a></div>
-                <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+events.id}>Edit</a></div>
               </div>
             </div>
 
