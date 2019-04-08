@@ -9,8 +9,6 @@ import EditAnEvent from './editanevent';
 import Register from './register';
 import Login from './login';
 import Logout from './logout';
-import Team from './team';
-import Contact from './contact';
 
 const Routes = () => (
   <Switch>
@@ -22,8 +20,6 @@ const Routes = () => (
     <Route exact path="/register" component={Register} />
     <Route exact path="/login" component={Login} />
     <Route exact path="/logout" component={Logout} />
-    <Route exact path="/team" component={Team} />
-    <Route exact path="/contact" component={Contact} />
   </Switch>
 )
 

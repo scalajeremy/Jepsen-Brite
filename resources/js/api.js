@@ -81,9 +81,15 @@ class API {
   }
 
    async logout() {
-     const response = await this.callAPI( 'POST', 'logout');
-    //const json = await response.json();
-    return({ message: 'success' });
+     const json = await this.callAPI( 'POST', 'logout');
+     if (json != undefined){
+       this.token = 'null';
+       localStorage.setItem('token', this.token);
+       return({ message: 'Successfully logged out!' });
+     }
+     else {
+       return({ message: 'Something went wrong, try again' });
+     }
   }
 }
 export default (new API());
