@@ -34,6 +34,7 @@ export default class Eventsolo extends Component {
     this.setState(await api.fetchEventSolo(id));
     // Fetch events and show 3 at random
     let {events} = (await api.fetchEvents());
+    console.log('events after fetching:', events);
     events = events.filter(e => e.id != id);
 
     while(events.length > 3){
@@ -48,6 +49,8 @@ export default class Eventsolo extends Component {
 
     render() {
       const { eventSolo, events } = this.state;
+      console.log('eventsSolo at render', eventSolo);
+      console.log('events at render:', events);
 
       return (
         <div className="container" key={this.key}>
